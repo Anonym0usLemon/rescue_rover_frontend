@@ -1,24 +1,13 @@
-# rescue_rover_frontend
+# Project Name: Dog Finder App
 
-## Project setup
-```
-npm install
-```
+## Project Description:
+A Vue.js frontend application for Rescue Rover.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features 
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### User Authentication 
+- Users are required to log in by providing their name and email.
+- Authentication is achieved by sending this information to a login endpoint on the rescue_rover backend API.
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
