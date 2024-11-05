@@ -21,7 +21,42 @@ export default {
     }, 
     methods: {
     login() {
-      console.log('User logged in!')
+      const username = this.username; 
+      const password = this.password
+
+      fetch('http://127.0.0.1:8000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password, 
+        })
+      })
+      .then(response => {
+        // Check if the response is ok
+        if (!response.ok) {
+          return response.json().then(data => {
+            throw new Error(data.error || 'Something went wrong');
+          });
+        }
+        // Parse the JSON data if the response is successful
+        return response.json();
+      })
+      .then(data => {
+        // Handle successful login here
+        console.log('Login successful:', data);
+        // Example: Store the JWT token in localStorage or sessionStorage
+        // localStorage.setItem('auth_token', data.token);
+      })
+      .catch(error => {
+        // Handle any errors
+        console.error('Error:', error);
+      });
+
+      this.username = '';
+      this.password = ''; 
     }
   }
 }
