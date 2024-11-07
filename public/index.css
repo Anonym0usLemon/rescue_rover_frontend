@@ -16,3 +16,10 @@
    height: 100vh;
    width: 100vw;
  }
+
+ .orange-gradient {
+  background: #FFB75E;
+  background: linear-gradient(
+    to right,
+    #FFB75E,#ED8F03); 
+}

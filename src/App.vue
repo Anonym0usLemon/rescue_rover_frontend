@@ -1,16 +1,15 @@
 <template>
   <nav-bar></nav-bar>
-  <login-form></login-form>
+
+  <router-view></router-view>
 </template>
 
 <script>
-import LoginForm from './components/LoginForm.vue'
 import NavBar from './components/UI/NavBar.vue';
 
 export default {
   name: 'App',
   components: {
-    LoginForm,
     NavBar
   }
 }

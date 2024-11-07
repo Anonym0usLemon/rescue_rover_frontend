@@ -1,11 +1,20 @@
+<script setup>
+  import BaseButton from '@/components/UI/BaseButton.vue';
+</script>
+
 <template>
   <div class="login-form-container">
     <form class="login-form" @submit.prevent="onSubmit">
-        <h2>Login</h2>
+        <div class="navigation">
+          <RouterLink to="/login" activeClass="active"><h2>Login</h2></RouterLink>
+          <span>/</span>
+          <RouterLink to="/register" activeClass="active"><h2>Register</h2></RouterLink>
+        </div>
+
         <div class="form-controls">
             <input v-model="username" type="text" id="username" placeholder="Username"/>
             <input v-model="password" type="password" id="password" placeholder="Password"/>
-            <button @click="login" class="orange-gradient">Login</button>
+            <BaseButton @click="login" class="orange-gradient">Login</BaseButton>
           </div>
      </form>
   </div>
@@ -64,11 +73,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.orange-gradient {
-  background: #FFB75E;
-  background: linear-gradient(
-    to right,
-    #FFB75E,#ED8F03); 
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 16px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #6d6d6d;
+}
+
+.active {
+  color: #171717 !important;
+}
+
+.navigation span {
+  font-weight: bold;
+  color: #171717;
 }
 
 .login-form-container {
@@ -110,22 +134,5 @@ export default {
 
 .form-controls input::placeholder {
   font-size: 16px;
-}
-
-button {
-  height: 40px;
-  color: white;
-  font-size: 16px;
-  padding-block: 5px;
-  padding-inline: 25px;
-  margin-top: 20px;
-  border-radius: 20px;
-  border: 2px solid hsla(0,0%,100%,.5);
-  transition: 0.1s ease-in-out;
-}
-
-button:hover {
-  transform: scale(1.05);
-  border: 2px solid #171717;
 }
 </style>
