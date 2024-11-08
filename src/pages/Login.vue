@@ -57,7 +57,8 @@ export default {
         // Handle successful login here
         console.log('Login successful:', data);
         // Example: Store the JWT token in localStorage or sessionStorage
-        // localStorage.setItem('auth_token', data.token);
+        localStorage.setItem('token', data.token);
+        this.$router.push('/');
       })
       .catch(error => {
         // Handle any errors
@@ -114,6 +115,7 @@ export default {
   background-color: white;
   border-radius: 5px;
   padding: 25px;
+  padding-inline: 50px;
 }
 
 .form-controls {
@@ -122,6 +124,7 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 100%;
 }
 
 .form-controls input[type="text"], .form-controls input[type="password"]  {
@@ -130,6 +133,7 @@ export default {
   border: 1px solid #d3d3d3;
   font-size: 16px;
   padding-left: 5px;
+  width: 100%;
 }
 
 .form-controls input::placeholder {

@@ -1,5 +1,5 @@
 <template>
-   <button>
+   <button class="orange-gradient">
     <slot></slot>
    </button>
 </template>
